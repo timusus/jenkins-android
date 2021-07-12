@@ -9,6 +9,9 @@ RUN apt-get update \
     && apt-get install jq -y \
     && apt-get install make -y \
     && apt-get install xz-utils -y
+
+# Seems to be required to allos emulator to run
+RUN apt=get install libgl1-mesa-dev
     
 # Install Android emulator image & create emulator
 RUN cd $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/ \
